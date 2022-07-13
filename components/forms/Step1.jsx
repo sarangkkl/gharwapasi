@@ -42,7 +42,7 @@ const Step1 = ({handleAadharID,changeActive}) => {
   return (
       <div className="row py-3">
         <div className="col-md-8 py-5">
-          <label for="formFile" className="form-label">
+          <label htmlFor="formFile" className="form-label">
             Upload Your Aadhar Card any Side 
           </label>
           <input className="form-control form-control" id="formFile" type="file" onChange={(e)=>{handleChange(e)}}/>
