@@ -1,6 +1,6 @@
 import { client,gql } from '../appolo';
 
-export const getBlogs = async()=>{
+export const getBlogs = async(page)=>{
     const {data} = await client.query({
         query: gql`query Blogs($pagination: PaginationArg, $filters: BlogFiltersInput) {
             blogs(pagination: $pagination, filters: $filters) {
@@ -31,7 +31,7 @@ export const getBlogs = async()=>{
             }
           }`,variables:{
             "pagination": {
-              "page": 1,
+              "page": page,
               "pageSize": 6,
               
             },

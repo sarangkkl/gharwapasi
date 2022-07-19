@@ -1,7 +1,10 @@
 import styled from "styled-components";
-
+import { sizes,colors } from "../../styles/styles";
 export const MainConatainer = styled.div`
   margin-top: 70px;
+  width:95%;
+  margin-left:auto;
+  margin-right:auto;
 `;
 
 export const FooterLinks = styled.div`
@@ -28,7 +31,7 @@ export const ActionContainer = styled.div`
   position: absolute;
   display: flex;
   justify-content: space-between;
-  top: 40%;
+  bottom: 40%;
   width:55%;
 `;
 export const CustomImageDiv = styled.div`
@@ -42,3 +45,25 @@ export const CustomImageDiv = styled.div`
     }
   }
 `;
+
+
+export const FbBanner = styled.div`
+  @media (max-width: ${sizes.tablet}) {
+    display: none;
+  }
+`;
+
+export const CustomButton = styled.button`
+  background-color: ${colors.red};
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width:${props => (props.full ? "100%" : "auto")};
+  font-size: 1rem;
+  font-weight: 500;
+
+  &:hover {
+    background-color: ${colors.dark};
+  }
+`

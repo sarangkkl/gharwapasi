@@ -1,8 +1,29 @@
-import React from 'react'
+import React,{useState} from 'react';
+import { CaseFilterContainer } from './style/CaseFilterStyle';
+import {  State, City }  from 'country-state-city';
+import { CustomButton } from '../../components/styledComponents/basicui'
+
 
 const CaseFilter = () => {
+  const [cityList, setCityList] = useState();
+  const [stateList, setStateList] = useState();
+
+  
+  const handleCountryChange = (e) => {
+    const res = State.getStatesOfCountry(e);
+    setStateList(res);
+  }
+
+  const handleStateChange = (e) => {
+    let temp = e.split('+');
+    console.log(temp)
+    const res = City.getCitiesOfState(temp[1], temp[0]);
+    
+    setCityList(res);
+  }
+
   return (
-    <div className="">
+    <CaseFilterContainer>
           <h3>FILTERS</h3>
           <select className="form-select" aria-label="Default select example">
             <option selected>Category</option>
@@ -16,32 +37,38 @@ const CaseFilter = () => {
           </div>
           <div className="my-2">
             <label className="form-label">Country</label>
-            <select className="form-select" aria-label="Default select example">
+            <select className="form-select" aria-label="Default select example" onChange={(e)=>{handleCountryChange(e.target.value)}}>
               <option selected>Country</option>
-              <option value="1">India</option>
-              <option value="2">Pakistan</option>
-              <option value="3">Bangladesh</option>
+              <option value="IN">India</option>
+              <option value="PK">Pakistan</option>
+              <option value="BD">Bangladesh</option>
+              <option value="AF">Afganistan</option>
+              <option value="US">USA</option>
+              <option value="GB">UK</option>
+              <option value="FR">France</option>
+              <option value="NP">Nepal</option>
+              <option value="BH">Bhutan</option>
             </select>
           </div>
-          <div className="my-2">
-            <label className="form-label">State</label>
-            <select className="form-select" aria-label="Default select example">
-              <option selected>Country</option>
-              <option value="1">India</option>
-              <option value="2">Pakistan</option>
-              <option value="3">Bangladesh</option>
+          {stateList && <div className="my-2">
+            <label className='form-label'>State</label>
+            <select className="form-select" aria-label="Default select example" onChange={(e)=>{handleStateChange(e.target.value)}}>
+              {stateList.map((item,index)=>(
+                <option key={index} value={`${item.isoCode}+${item.countryCode}`}>{item.name}</option>
+              ))}
             </select>
-          </div>
-          <div className="my-2">
-            <label className="form-label">City</label>
+          </div>}
+
+          {cityList && <div className="my-2">
+            <label>City</label>
             <select className="form-select" aria-label="Default select example">
-              <option selected>Country</option>
-              <option value="1">India</option>
-              <option value="2">Pakistan</option>
-              <option value="3">Bangladesh</option>
+              {cityList.map((item,index)=>(
+                <option key={index} value={item.isoCode}>{item.name}</option>
+              ))}
             </select>
-          </div>
-        </div>
+            </div>}
+                <CustomButton full>Apply</CustomButton>
+        </CaseFilterContainer>
   )
 }
 

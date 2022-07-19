@@ -9,12 +9,7 @@ import { getBlogs } from '../../appollo/blog/blog'
 const ApplyGharwapasi = ({ res,blogs }) => {
   const activeLink = "Apply Gharwapasi";
   const previosArray = [{ label: "Home", path: "/" }];
-  const [isFormActive,setIsFormActive] = useState(false);
 
-
-  const handleFormActive = () => {
-    setIsFormActive(!isFormActive);
-  }
 
   return (
     <MainConatainer>

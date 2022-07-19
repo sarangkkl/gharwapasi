@@ -20,10 +20,12 @@ import Chip from '@mui/material/Chip';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
+import Pagination from '@mui/material/Pagination';
+
 
 
 
 export {
     AppBar,Box ,Toolbar,Typography,Button,IconButton,MenuIcon,MenuItem,Menu,Drawer,Divider,List,ListItem,ListItemIcon,ListItemText,
-    Grid,Stack,TextField,Chip,Stepper,Step,StepLabel,
+    Grid,Stack,TextField,Chip,Stepper,Step,StepLabel,Pagination
 }

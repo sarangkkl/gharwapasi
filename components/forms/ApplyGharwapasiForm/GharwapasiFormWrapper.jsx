@@ -1,7 +1,7 @@
 import React from 'react';
 import GharwapasiForm from './GharwapasiForm';
 
-import { ApplyGharwapasiState,ApplyGharwapasiContext } from '../../../context'
+import { ApplyGharwapasiState } from '../../../context'
 
 const GharwapasiFormWrapper = () => {
     

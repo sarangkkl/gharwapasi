@@ -1,28 +1,28 @@
 import React from "react";
 import Link from "next/link";
-
+import { BlogCardContainer,BlogCardDescription } from './BlogCardStyle'
 const BlogCard = ({blog}) => {
   return (
     
-    <div className="">
+    <BlogCardContainer>
       
       {blog.attributes.image.data ? <img
         src={`http://localhost:1337${blog.attributes.image.data.attributes.url}`}
         className="card-img-top"
         alt={blog.title}
-        style={{ height: "300px" }}
+        
       />:""}
       
-      <div className="card-body">
-        <h5 className="card-title">{blog.attributes.title}</h5>
-        <p className="card-text">
+      <BlogCardDescription >
+        <h5>{blog.attributes.title}</h5>
+        <p>
           {(blog.attributes.description).substring(0, 200)}
         </p>
-        <Link href="/article/this-is-the" className="btn btn-primary">
+        <Link href="/article/this-is-the">
           Read More
         </Link>
-      </div>
-    </div>
+      </BlogCardDescription>
+    </BlogCardContainer>
   );
 };
 

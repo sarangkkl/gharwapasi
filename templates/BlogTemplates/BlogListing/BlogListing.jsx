@@ -1,27 +1,30 @@
 import React from 'react';
-import { MainConatainer } from '../../../components/styledComponents/basicui';
-import { BlogCard,Pagination } from '../../../components';
+import { MainConatainer,CustomButton } from '../../../components/styledComponents/basicui';
+import { BlogCard } from '../../../components';
+import { FlexBox,GridContainer } from '../../../styles/containers';
+import { Pagination } from '../../../assets'
+import { PaginationWrapper } from './BlogListingStyle';
 
-const BlogListing = ({FilterComp,items}) => {
+const BlogListing = ({FilterComp,items,type}) => {
   return (
     <MainConatainer>
-        <div className="row">
-            <div className="col-md-2">
-                <FilterComp/>
-
-            </div>
-            <div className="col md-10">
-                Total Cases : {items.length}
-                <div className="row">
-                {items.map((item,index)=>(
-                    <div className='col-md-4'>
+        <FlexBox>
+            <FilterComp/>
+            <div>
+                <FlexBox>
+                    <h5>{items.length}  {type} found</h5>
+                    {type==="Case" ? <CustomButton>Report New Case</CustomButton>:""} 
+                </FlexBox>
+                <GridContainer>
+                    {items.map((item,index)=>(
                         <BlogCard key={index} blog={item}/>
-                    </div>
-                ))}
-                </div>
+                    ))} 
+                </GridContainer>
             </div>
-        </div>
-        <Pagination />
+        </FlexBox>
+        <PaginationWrapper>
+            <Pagination count={10} color="secondary" />
+        </PaginationWrapper>
     </MainConatainer>
   )
 }

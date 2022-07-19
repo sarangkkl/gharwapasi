@@ -25,7 +25,7 @@ const Crousal = () => {
         }
     }
   return (
-    <div className="container">
+    <div >
         <CustomImageDiv>
             <CustomImage src={crousalArray[index].src}/>
             <ActionContainer>
