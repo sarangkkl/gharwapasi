@@ -1,12 +1,12 @@
 import React,{useState} from "react";
-import { Seo, GharwapasiForm, BreadCrum, Card } from "../../components";
+import { Seo,BreadCrum, Card,GharwapasiFormWrapper,BlogCard } from "../../components";
 import { MainConatainer } from "../../components/styledComponents/basicui";
-import { cover1 } from "../../assets/images";
 import { getExshow } from "../../appollo/exshow/exshow";
-import { CoverImg } from "./applySharwapasiStyle";
+import { getBlogs } from '../../appollo/blog/blog'
 
 
-const ApplyGharwapasi = ({ res }) => {
+
+const ApplyGharwapasi = ({ res,blogs }) => {
   const activeLink = "Apply Gharwapasi";
   const previosArray = [{ label: "Home", path: "/" }];
   const [isFormActive,setIsFormActive] = useState(false);
@@ -18,26 +18,36 @@ const ApplyGharwapasi = ({ res }) => {
 
   return (
     <MainConatainer>
-      <Seo title="Apply Gharwapasi" />
-      <CoverImg src={cover1.src} />
+      <Seo title="Apply Gharwapasi" description="You can apply for gharwapasi from this website we will help you in all possible way we can"/>
+      
       <div className="container">
         <BreadCrum activeLink={activeLink} previosArray={previosArray} />
         <div className="row">
           <div className="col-md-6 mx-auto my-5">
-            <GharwapasiForm/>
+            <GharwapasiFormWrapper/>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-7 my-2">
+          <div className="col-md-12 my-2">
             <div className="row">
               {res.map((item, index) => (
-                <div className="col-md-6" key={index}>
+                <div className="col-md-4" key={index}>
                   <Card
                     title={item.attributes.title}
                     video={item.attributes.video}
                   />
                 </div>
               ))}
+            </div>
+          </div>
+          <div className="col-md-12">
+            <div className="row">
+            {blogs.map((item,index)=>(
+                  <div className="col-md-4">
+                    <BlogCard key={index} blog={item}/>
+                  </div>
+            ))}
+
             </div>
           </div>
         </div>
@@ -51,10 +61,11 @@ export default ApplyGharwapasi;
 
 export const getStaticProps = async () => {
   const res = await getExshow();
-  getExshow().then((res) => {});
+  const blogs = await getBlogs();
   return {
     props: {
       res,
+      blogs
     },
   };
 };

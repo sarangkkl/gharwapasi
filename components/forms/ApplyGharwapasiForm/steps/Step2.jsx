@@ -1,8 +1,10 @@
-import React,{useRef,useState} from 'react';
+import React,{useRef,useState,useContext} from 'react';
 import Webcam from "react-webcam";
+import { ApplyGharwapasiContext } from '../../../../context/'
 
-const Step2 = ({changeActive,ApplicantImageId}) => {
+const Step2 = () => {
     const webcamRef = useRef(null);
+    const a = useContext(ApplyGharwapasiContext);
     const [image, setImage] = useState(null);
     const [prevImage, setPrevImage] = useState();
 
@@ -42,10 +44,10 @@ const Step2 = ({changeActive,ApplicantImageId}) => {
         const output = JSON.parse(result);
         console.log(output[0].id);
 
-        ApplicantImageId(output[0].id);
+        a.setImgId(output[0].id);
       })
       .catch(error => console.log('error', error));
-    changeActive(2);
+      a.setActiveStep(2);
     };
   
     const capture = React.useCallback(() => {

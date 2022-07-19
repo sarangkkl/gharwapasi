@@ -1,11 +1,10 @@
-import React,{useState} from "react";
-import Image from "next/image";
+import React,{useState,useContext} from "react";
+import { ApplyGharwapasiContext } from '../../../../context/';
 
-const Step1 = ({handleAadharID,changeActive}) => {
+const Step1 = () => {
   const [prevImg, setPrevImag] = useState(null);
-
+  const a = useContext(ApplyGharwapasiContext);
   const handleChange = (e) => {
-    console.log("I was executeds")
     setPrevImag(e.target.files[0]);
     console.log(prevImg);
   }
@@ -30,10 +29,10 @@ const Step1 = ({handleAadharID,changeActive}) => {
       .then(result =>{
         const output = JSON.parse(result);
         console.log(output[0].id);
-        handleAadharID(output[0].id);
+        a.setAadharId(output[0].id);
       })
       .catch(error => console.log('error', error));
-    changeActive(1);
+      a.setActiveStep(1);
     }else{
       alert("Please Upload Aadhar card");
     }

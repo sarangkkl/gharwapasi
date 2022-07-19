@@ -15,4 +15,9 @@ export const CustomIconLinkContainer = styled.div`
     text-decoration: none;
     color: #000000;
   }
+  & a:hover{
+    color:red;
+    text-decoration:underline;
+  }
+
 `;

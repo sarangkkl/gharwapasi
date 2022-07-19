@@ -16,9 +16,11 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 export {
     HomeIcon,KeyboardBackspaceIcon,FamilyRestroom,SummarizeIcon,BookIcon,NewspaperIcon,CoPresentIcon,AlarmOnIcon,LiveTvIcon,
     TvIcon,ReportIcon,FacebookIcon,InstagramIcon,TwitterIcon,YouTubeIcon,TelegramIcon,ArrowForwardIcon,
-    AccountBalanceIcon
+    AccountBalanceIcon,ArrowForwardIosIcon,ArrowBackIosIcon
 }

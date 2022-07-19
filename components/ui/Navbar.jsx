@@ -18,6 +18,7 @@ const Navbar = () => {
     {title:'Join Mission',path:'join-mission'},
     {title:'cases',path:'cases'},
     {title:'club',path:'club'},
+    {title:'RAA',path:'research-&-analysis'},
   ]
 
   const mobileNavLink = [
@@ -42,10 +43,7 @@ const Navbar = () => {
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <Link href="/">
-              <Image
-                src={logo.src}
-                alt="Mission Ghar wapasi"
-                style={{cursor:'pointer',marginTop:"6px"}}
+              <Image src={logo.src} alt="Mission Ghar wapasi" style={{cursor:'pointer',marginTop:"7px"}}
                 width="173px"
                 height="43px"
               />
