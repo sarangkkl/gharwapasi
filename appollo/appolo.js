@@ -1,6 +1,6 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloClient, createHttpLink, InMemoryCache,gql } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import {gql} from "@apollo/client";
+
 
 
 
