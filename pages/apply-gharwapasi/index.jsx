@@ -38,7 +38,7 @@ const ApplyGharwapasi = ({ res,blogs }) => {
           <div className="col-md-12">
             <div className="row">
             {blogs.map((item,index)=>(
-                  <div className="col-md-4">
+                  <div className="col-md-4" key={index}>
                     <BlogCard key={index} blog={item}/>
                   </div>
             ))}
