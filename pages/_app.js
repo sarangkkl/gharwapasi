@@ -9,7 +9,7 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Script
+      <Script id="twakid"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
