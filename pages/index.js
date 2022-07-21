@@ -18,7 +18,7 @@ const index = ({blogs,exshow}) => {
               <img src={crousal2.src} alt='The mission Gharwapasi'/>
             </HeroImage>
             <FbBanner id="fb-root mx-4">
-              <div class="fb-page" data-href="https://www.facebook.com/SwamiJitendranandJee" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SwamiJitendranandJee" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SwamiJitendranandJee">Swami Jitendranand Sarswati Ji Maharaj</a></blockquote></div>
+              <div className="fb-page" data-href="https://www.facebook.com/SwamiJitendranandJee" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/SwamiJitendranandJee" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/SwamiJitendranandJee">Swami Jitendranand Sarswati Ji Maharaj</a></blockquote></div>
             </FbBanner> 
         </FlexBox>
         <GridContainer>
