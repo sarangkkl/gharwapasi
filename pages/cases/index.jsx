@@ -1,9 +1,4 @@
 import React,{useContext,useEffect,useState} from "react";
-import { getBlogs } from '../../appollo/blog/blog';
-import { BlogListing } from '../../templates';
-import { BlogContext } from '../../context'
-import { Loader } from '../../components';
-import CaseFilter from './CaseFilter';
 import BlogWrapper from './BlogWrapper'
 const Cases = () => {
   
