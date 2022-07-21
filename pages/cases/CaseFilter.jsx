@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
-import { CaseFilterContainer } from './style/CaseFilterStyle';
 import {  State, City }  from 'country-state-city';
-import { CustomButton } from '../../components/styledComponents/basicui'
+import { CustomButton,CaseFilterContainer } from '../../components/styledComponents/basicui'
 
 
 const CaseFilter = () => {

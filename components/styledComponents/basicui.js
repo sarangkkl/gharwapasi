@@ -72,3 +72,17 @@ export const FullButton = styled(CustomButton)`
   width: 100%;
   margin-top: 10px;
 `;
+
+export const CaseFilterContainer = styled.div`
+    margin-right: 10px;
+
+`;
+
+export const CoverImg = styled.img`
+    width: 100%;
+    height:50vh;
+    object-fit: cover;
+    @media (max-width: 768px) {
+        height: 40vh;
+    }
+`;
