@@ -1,11 +1,22 @@
-import React from 'react'
-
+import React,{useContext,useState,useEffect} from 'react';
 import CaseFilter from "./CaseFilter";
 import { getBlogs } from '../../appollo/blog/blog';
-import { BlogListing } from '../../templates'
-const BlogListingOuter = ({blogs}) => {
+import { BlogListing } from '../../templates';
+import { BlogContext } from '../../context';
+import { Loader } from '../../components'
+const BlogListingOuter = () => {
+
+  const a = useContext(BlogContext);
+  useEffect(() => {
+    getBlogs().then(res => {
+      a.setBlogs(res);
+      a.setLoading(false);
+    })
+  }, [a.blogs])
   return (
-    <BlogListing FilterComp={CaseFilter} items={blogs} type="Case"/>
+    <>
+      {a.loading ? <Loader /> : <BlogListing FilterComp={CaseFilter} items={a.blogs} type="Case"/>}
+    </>
   )
 }
 

@@ -64,6 +64,11 @@ export const CustomButton = styled.button`
   font-weight: 500;
 
   &:hover {
-    background-color: ${colors.dark};
+    opacity: 0.7;
   }
 `
+
+export const FullButton = styled(CustomButton)`
+  width: 100%;
+  margin-top: 10px;
+`;

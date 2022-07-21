@@ -6,6 +6,7 @@ const BlogState = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState();
     const [blogPerPage, setBlogPerPage] = useState(6);
+    const [loading, setLoading] = useState(true);
     return(
         <BlogContext.Provider value={{
             blogs,
@@ -15,7 +16,9 @@ const BlogState = (props) => {
             totalPages,
             setTotalPages,
             blogPerPage,
-            setBlogPerPage
+            setBlogPerPage,
+            loading,
+            setLoading
         }}>
             {props.children}
         </BlogContext.Provider>

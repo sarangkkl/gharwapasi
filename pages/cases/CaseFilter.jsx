@@ -43,7 +43,6 @@ const CaseFilter = () => {
               <option value="PK">Pakistan</option>
               <option value="BD">Bangladesh</option>
               <option value="AF">Afganistan</option>
-              <option value="US">USA</option>
               <option value="GB">UK</option>
               <option value="FR">France</option>
               <option value="NP">Nepal</option>

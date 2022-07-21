@@ -3,6 +3,8 @@ export const colors = {
     secondary: '#513252',
     dark: '#031043',
     red: '#ff6a6a',
+    previewLight: '#fafafa',
+    previewBorder: '#DAE2B6',
 }
 
 export const sizes = {

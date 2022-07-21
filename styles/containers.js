@@ -38,3 +38,22 @@ export const GridContainer = styled.div`
         grid-template-columns: repeat(1, 1fr);
     }
 `;
+
+export const Box50 = styled.div`
+    
+    @media (max-width: ${sizes.desktop}) {
+        width: 45%;
+    }
+    @media (max-width: ${sizes.laptopL}) {
+        width: 45%;
+    }
+    @media (max-width: ${sizes.laptop}) {
+        width: 45%;
+    }
+    @media (max-width: ${sizes.tablet}) {
+        width: 100%;
+    }
+    @media (max-width: ${sizes.mobileL}) {
+        width: 100%;
+    }
+`;

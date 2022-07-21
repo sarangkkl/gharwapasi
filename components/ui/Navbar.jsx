@@ -18,7 +18,7 @@ const Navbar = () => {
     {title:'Join Mission',path:'join-mission'},
     {title:'cases',path:'cases'},
     {title:'club',path:'club'},
-    {title:'RAA',path:'research-&-analysis'},
+    {title:'Nft',path:'nft'},
   ]
 
   const mobileNavLink = [

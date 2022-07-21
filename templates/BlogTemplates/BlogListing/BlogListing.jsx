@@ -4,6 +4,7 @@ import { BlogCard } from '../../../components';
 import { FlexBox,GridContainer } from '../../../styles/containers';
 import { Pagination } from '../../../assets'
 import { PaginationWrapper } from './BlogListingStyle';
+import Link from 'next/link';
 
 const BlogListing = ({FilterComp,items,type}) => {
   return (
@@ -13,7 +14,7 @@ const BlogListing = ({FilterComp,items,type}) => {
             <div>
                 <FlexBox>
                     <h5>{items.length}  {type} found</h5>
-                    {type==="Case" ? <CustomButton>Report New Case</CustomButton>:""} 
+                    {type==="Case" ? <Link href="add-new-case"><CustomButton>Report New Case</CustomButton></Link>:""} 
                 </FlexBox>
                 <GridContainer>
                     {items.map((item,index)=>(
