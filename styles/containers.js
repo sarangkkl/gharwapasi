@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { sizes } from './styles'
+import { sizes,colors } from './styles'
 
 export const FlexBox = styled.div`
     display: flex;
@@ -56,4 +56,11 @@ export const Box50 = styled.div`
     @media (max-width: ${sizes.mobileL}) {
         width: 100%;
     }
+`;
+
+export const PreviewBox = styled.div`
+    margin: 10px 0px;
+    background-color: ${colors.previewLight};
+    padding: 10px;
+    border: 1px solid ${colors.previewBorder};
 `;

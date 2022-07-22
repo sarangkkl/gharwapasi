@@ -86,3 +86,4 @@ export const CoverImg = styled.img`
         height: 40vh;
     }
 `;
+
