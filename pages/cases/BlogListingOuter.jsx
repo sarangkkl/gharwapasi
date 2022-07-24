@@ -1,4 +1,4 @@
-import React,{useContext,useState,useEffect} from 'react';
+import React,{useContext,useEffect} from 'react';
 import CaseFilter from "./CaseFilter";
 import { getBlogs } from '../../appollo/blog/blog';
 import { BlogListing } from '../../templates';
@@ -24,11 +24,11 @@ const BlogListingOuter = ({blogs}) => {
 
 export default BlogListingOuter
 
-export const getServerSideProps = async () => {
-  const blogs = await getBlogs();
-  return {
-    props: {
-      blogs
-    }
-  }
-}
+// export const getServerSideProps = async () => {
+//   const blogs = await getBlogs();
+//   return {
+//     props: {
+//       blogs
+//     }
+//   }
+// }

@@ -11,7 +11,9 @@ import Crousal from './ui/Crousal';
 import BlogCard from "./CustomComponent/BlogCard/BlogCard";
 import Loader from "./CustomComponent/Loader/Loader";
 import CustomImage from "./CustomComponent/CustomImage";
+import ReportCase from "./forms/ReportCase/ReportCase";
+import MarriageFormWrapper from "./forms/MarriageForm/MarriageFormWrapper";
 export {
     Card,Navbar,Footer,Seo,BreadCrum,GharwapasiFormWrapper,MainConatainer,PaginationWrapper,Crousal,
-    BlogCard,CustomImage,Loader,FullButton
+    BlogCard,CustomImage,Loader,FullButton,ReportCase,MarriageFormWrapper
 }

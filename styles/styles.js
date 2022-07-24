@@ -5,6 +5,7 @@ export const colors = {
     red: '#ff6a6a',
     previewLight: '#fafafa',
     previewBorder: '#DAE2B6',
+    danger: '#DC3545',
 }
 
 export const sizes = {

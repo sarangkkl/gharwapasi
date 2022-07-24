@@ -8,7 +8,8 @@ import crousal2 from "./crousal/crousal2.jpeg"
 import crousal3 from "./crousal/crousal3.jpeg"
 import crousal4 from "./crousal/crousal4.jpeg"
 import crousal5 from "./crousal/crousal5.jpeg"
+import marriage1 from './otherImg/img1.jpg'
 
 export {
-    logo,slide1,slide2,slide3,cover1,crousal1,crousal2,crousal3,crousal4,crousal5
+    logo,slide1,slide2,slide3,cover1,crousal1,crousal2,crousal3,crousal4,crousal5,marriage1
 }

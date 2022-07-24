@@ -5,12 +5,12 @@ import { setContext } from '@apollo/client/link/context';
 
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:1337/graphql',
+  uri: 'https://seal-app-k7j9v.ondigitalocean.app/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token ="65f5cc9490ac47882b2c52e6e5c388dd3324aa3d615753dc55fed8a699a5b4c21fbf333d039055106d997fc9cde8986bce97e948aa204f9c093fca2fae2936978113275482f3a60f6f000433fdf1ddfccbec56c270d186105d39de3e4ed1eb7f5f69db46785a8a04202e3cae6e41799be5143fc739fa1d800d9bd99f82aae8d5";
+  const token ="97191c96fee1c94443871ffb1602882a163880472d935b2073a4c89c5b2b9c6414b71b0a9dce8bcc495233b19a574217d48ba00b76caa82457ff1190529b7049645bb43ad1d6abb50b1663f0480583f5af08df9cba1265490a38c8338732f8283978d32f200541390e6c68fcbf0db271739001fc46bd089cbe2fa7ff13ca169f";
   // return the headers to the context so httpLink can read them
   return {
     headers: {

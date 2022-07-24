@@ -87,3 +87,26 @@ export const CoverImg = styled.img`
     }
 `;
 
+
+export const NoticeBox = styled.div`
+  margin-top: 10px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: ${props => props.color};
+
+`;
+
+
+export const CenterDiv = styled.div`
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+`;

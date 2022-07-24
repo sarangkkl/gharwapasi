@@ -1,6 +1,5 @@
 import React,{useContext,useState} from 'react';
-import { Formik, Form } from "formik";
-import { InputField } from "../../formui/InputField";
+
 import { applyGharwapasi } from "../../../../appollo/applyGharwapasi/applyGharwapasi";
 import { useMutation } from '@apollo/client';
 import { ApplyGharwapasiContext } from '../../../../context/'
@@ -24,8 +23,6 @@ const Step3 = () => {
       "ApplicantImage":a.imgId,
 
     }
-
-    console.log(a.imgId)
     const [applyGharwapasihandle, { loading, error, data }] =useMutation(applyGharwapasi);
   
     const handleSubmit = async (e) => {
