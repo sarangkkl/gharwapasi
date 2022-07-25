@@ -1,10 +1,11 @@
-import React,{useContext,useEffect,useState} from "react";
-import BlogWrapper from './BlogWrapper'
+import React from "react";
+import {BlogWrapper} from '../../components'
 const Cases = () => {
-  
 
   return (
-      <BlogWrapper/>
+      <>
+        <BlogWrapper/>
+      </>
   );
 };
 

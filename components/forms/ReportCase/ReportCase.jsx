@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { FullButton,Loader } from '../../';
 import { InputField,Label,TextArea,CustomSelect } from './ReportCaseStyle';
 import { createCase } from '../../../appollo/forms/CreateForms';
+import { useRouter } from 'next/router'
 
 import { useMutation } from '@apollo/client';
 
@@ -16,9 +17,9 @@ const ReportCase = () => {
     const [refrenceLink,setRefrenceLink] = useState('');
     const [description,setDescription] = useState('');
     const [category,setCategory] = useState('');
-
+    const router = useRouter();
     const handleSubmit = () => {
-        console.log(country)
+       
         if(title && country && state && city && date && shortDescription && refrenceLink && description){
             // console.log(title,country,state,city,date,shortDescription,refrenceLink,description)
             const ResponseData = {
@@ -39,6 +40,7 @@ const ReportCase = () => {
                       data: ResponseData,
                     },
                   });
+                
             } catch (error) {
                 console.log(error);
             }
@@ -46,6 +48,11 @@ const ReportCase = () => {
             alert('Please fill all the fields')
         } 
     }
+    if(data){
+        router.push('/success');
+    }
+
+    
   return (
     
    <>

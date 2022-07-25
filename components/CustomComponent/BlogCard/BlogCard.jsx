@@ -7,7 +7,7 @@ const BlogCard = ({blog}) => {
     <BlogCardContainer>
       
       {blog.attributes.image.data ? <img
-        src={`http://localhost:1337${blog.attributes.image.data.attributes.url}`}
+        src={`${blog.attributes.image.data.attributes.url}`}
         className="card-img-top"
         alt={blog.title}
         

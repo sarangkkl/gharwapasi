@@ -7,17 +7,17 @@ import { Loader } from '../../components'
 const BlogListingOuter = ({blogs}) => {
 
   const a = useContext(BlogContext);
-
+  const {loading} = a;
   useEffect(() => {
     getBlogs().then(res => {
       a.setBlogs(res);
       a.setLoading(false);
     })
   }, [a])
-  console.log(blogs)
   return (
     <>
-      {a.loading ? <Loader /> : <BlogListing FilterComp={CaseFilter} items={a.blogs} type="Case"/>}
+      {loading  ? <Loader /> : <BlogListing FilterComp={CaseFilter} items={a.blogs} type="Case"/>}
+      {/* <BlogListing FilterComp={CaseFilter} items={blogs} type="Case"/> */}
     </>
   )
 }
@@ -26,6 +26,7 @@ export default BlogListingOuter
 
 // export const getServerSideProps = async () => {
 //   const blogs = await getBlogs();
+//   console.log(blogs)
 //   return {
 //     props: {
 //       blogs

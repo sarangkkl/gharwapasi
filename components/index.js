@@ -13,7 +13,8 @@ import Loader from "./CustomComponent/Loader/Loader";
 import CustomImage from "./CustomComponent/CustomImage";
 import ReportCase from "./forms/ReportCase/ReportCase";
 import MarriageFormWrapper from "./forms/MarriageForm/MarriageFormWrapper";
+import BlogWrapper from "./cases/BlogWrapper"
 export {
     Card,Navbar,Footer,Seo,BreadCrum,GharwapasiFormWrapper,MainConatainer,PaginationWrapper,Crousal,
-    BlogCard,CustomImage,Loader,FullButton,ReportCase,MarriageFormWrapper
+    BlogCard,CustomImage,Loader,FullButton,ReportCase,MarriageFormWrapper,BlogWrapper
 }
