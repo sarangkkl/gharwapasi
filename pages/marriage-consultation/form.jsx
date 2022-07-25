@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainConatainer,CustomButton,NoticeBox,CenterDiv } from '../../components/styledComponents/basicui'
+import { MainConatainer } from '../../components/styledComponents/basicui'
 import { MarriageFormWrapper } from '../../components'
 
 const form = () => {

@@ -60,6 +60,7 @@ const ReportCase = () => {
         <Label>Title</Label>
         <InputField type="text" onChange={(e)=>{setTitle(e.target.value)}}/>
         <CustomSelect onChange={(e)=>{setCategory(e.target.value)}}>
+            <option value="">Choose Case Category</option>
             <option value="Love_Jihad">Love Jihad</option>
             <option value="SunnatMarriage">Sunnat Marriage</option>
             <option value="Mutah">Mutah</option>

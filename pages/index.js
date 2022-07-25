@@ -13,7 +13,7 @@ const index = ({blogs,exshow}) => {
   return (
     <MainConatainer>
       <Seo title="The Mission Gharwapasi" description="Gharwapasi is the process of taking back the muslim in the dharma who willingly want to come." keywords="Mission Gharwapasi"/>
-        {/* <h3>{process.env.REACT_APP_BACKEND_URL}</h3> */}
+        
         <FlexBox>
             <HeroImage>
               <img src={crousal2.src} alt='The mission Gharwapasi'/>

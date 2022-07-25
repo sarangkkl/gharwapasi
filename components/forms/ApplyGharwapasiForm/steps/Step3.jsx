@@ -1,12 +1,13 @@
 import React,{useContext,useState} from 'react';
-
+import { useRouter } from 'next/router'
 import { applyGharwapasi } from "../../../../appollo/applyGharwapasi/applyGharwapasi";
 import { useMutation } from '@apollo/client';
-import { ApplyGharwapasiContext } from '../../../../context/'
+import { ApplyGharwapasiContext } from '../../../../context/';
+import Loader from '../../../CustomComponent/Loader/Loader';
 
 
 const Step3 = () => {
-
+    const router = useRouter();
     const [name, setName] = useState('');
     const [number,setNumber] = useState('');
     const [AadharNumber,setAadharNumber] = useState('');
@@ -37,8 +38,14 @@ const Step3 = () => {
       } catch (error) {
         console.log(error);
       }
-      console.log(data);
+      
     };
+    if(data){
+      router.push('/success');
+    }
+    if(error){
+      router.push('/error');
+    }
 
     const handleChange = (e) => {
       // console.log(e.target.value)
@@ -58,7 +65,8 @@ const Step3 = () => {
       }
     }
     return (
-      <div>
+      <>
+        {loading ? <Loader /> : <div>
           <form onSubmit={(e)=>{handleSubmit(e)}}>
             <label className="form-label" htmlFor="name">Name</label>
             <input type="text" className='form-control' name="Name" onChange={(e)=>{handleChange(e)}}/>
@@ -72,7 +80,8 @@ const Step3 = () => {
               Submit
             </button>
           </form>   
-      </div>
+      </div>}
+      </>
     );
   };
 

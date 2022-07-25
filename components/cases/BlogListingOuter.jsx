@@ -17,19 +17,9 @@ const BlogListingOuter = ({blogs}) => {
   return (
     <>
       {loading  ? <Loader /> : <BlogListing FilterComp={CaseFilter} items={a.blogs} type="Case"/>}
-      {/* <BlogListing FilterComp={CaseFilter} items={blogs} type="Case"/> */}
+      
     </>
   )
 }
 
 export default BlogListingOuter
-
-// export const getServerSideProps = async () => {
-//   const blogs = await getBlogs();
-//   console.log(blogs)
-//   return {
-//     props: {
-//       blogs
-//     }
-//   }
-// }

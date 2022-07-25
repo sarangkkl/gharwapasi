@@ -11,7 +11,7 @@ const AddNewCase = () => {
     <MainConatainer>
         <FlexBox>
             <Box50>        
-                   <ReportCase/>  
+                <ReportCase/>  
             </Box50>
             <Data/>
         </FlexBox>

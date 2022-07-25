@@ -1,6 +1,7 @@
 import React,{useState,useContext} from "react";
 import { ApplyGharwapasiContext } from '../../../../context/';
-import { Loader } from '../../../'
+import { Loader } from '../../../';
+import { BACKEND_URL,BACKEND_TOKEN } from '../../../../appollo/appolo'
 
 const Step1 = () => {
   const [prevImg, setPrevImag] = useState(null);
@@ -14,7 +15,7 @@ const Step1 = () => {
     a.setIsLoading(true);
     if(prevImg){
       var myHeaders = new Headers();
-      myHeaders.append("Authorization", "Bearer 65f5cc9490ac47882b2c52e6e5c388dd3324aa3d615753dc55fed8a699a5b4c21fbf333d039055106d997fc9cde8986bce97e948aa204f9c093fca2fae2936978113275482f3a60f6f000433fdf1ddfccbec56c270d186105d39de3e4ed1eb7f5f69db46785a8a04202e3cae6e41799be5143fc739fa1d800d9bd99f82aae8d5");
+      myHeaders.append("Authorization", `Bearer ${BACKEND_TOKEN}`);
       console.log(prevImg)
       var formdata = new FormData();
       formdata.append("files", prevImg);
@@ -26,7 +27,7 @@ const Step1 = () => {
         redirect: 'follow'
       };
 
-    fetch(`http://localhost:1337/api/upload/`, requestOptions)
+    fetch(`${BACKEND_URL}`, requestOptions)
       .then(response => response.text())
       .then(result =>{
         const output = JSON.parse(result);
@@ -35,13 +36,14 @@ const Step1 = () => {
         a.setIsLoading(false);
       })
       .catch(error => console.log('error', error));
-      if(a.isLoading===false){
-        a.setActiveStep(1);
-      }
+      
     }else{
       alert("Please Upload Bio Data PDF");
     }
-   
+  }
+  if(a.aadharId){
+    a.setActiveStep(1);
+    a.setIsLoading(false);
   }
   return (
       <>

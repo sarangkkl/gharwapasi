@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { Seo,BreadCrum, Card,GharwapasiFormWrapper,BlogCard } from "../../components";
 import { MainConatainer } from "../../components/styledComponents/basicui";
 import { getExshow } from "../../appollo/exshow/exshow";
