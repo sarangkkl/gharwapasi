@@ -4,7 +4,7 @@ import { getBlogs } from '../../appollo/blog/blog';
 import { BlogListing } from '../../templates';
 import { BlogContext } from '../../context';
 import { Loader } from '../../components'
-const BlogListingOuter = ({blogs}) => {
+const BlogListingOuter = () => {
 
   const a = useContext(BlogContext);
   const {loading} = a;

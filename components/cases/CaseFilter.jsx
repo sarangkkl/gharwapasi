@@ -1,13 +1,15 @@
 import React,{useState} from 'react';
 import {  State, City }  from 'country-state-city';
-import { CustomButton,CaseFilterContainer } from '../../components/styledComponents/basicui'
+import { getBlogs } from '../../appollo/blog/blog';
+import { BlogContext } from '../../context';
+import { CustomButton,CaseFilterContainer } from '../../components/styledComponents/basicui';
 
 
 const CaseFilter = () => {
+  const a = useContext(BlogContext);
   const [cityList, setCityList] = useState();
   const [stateList, setStateList] = useState();
 
-  
   const handleCountryChange = (e) => {
     const res = State.getStatesOfCountry(e);
     setStateList(res);
@@ -17,8 +19,11 @@ const CaseFilter = () => {
     let temp = e.split('+');
     console.log(temp)
     const res = City.getCitiesOfState(temp[1], temp[0]);
-    
     setCityList(res);
+  }
+
+  const ApplyFilter = () => {
+
   }
 
   return (
@@ -26,9 +31,13 @@ const CaseFilter = () => {
           <h3>FILTERS</h3>
           <select className="form-select" aria-label="Default select example">
             <option selected>Category</option>
-            <option value="1">Halala</option>
-            <option value="2">Mutah</option>
-            <option value="3">Love Jihad</option>
+            <option value="Halala">Halala</option>
+            <option value="Mutah">Mutah</option>
+            <option value="Love_Jihad">Love Jihad</option>
+            <option value="SunnatMarriage">Sunnat Marriage</option>
+            <option value="HateKillings">Hate Killings</option>
+            <option value="HonorKillings">Honor Killings</option>
+            <option value="HonorKillings">Other</option>
           </select>
           <div className="my-2">
             <label className="form-label">Cut of Date</label>
